@@ -74,14 +74,19 @@ end
 
 
 def won?
-  WIN_COMBINATIONS.each  do  |win_combination|
+  #WIN_COMBINATIONS.each  do  |win_combination|
 
-    if win_combination.all? {|a| @board[a] == "X"} || win_combination.all? {|a| @board[a] == "O"}
-       return  win_combination
-    end
+  #  if win_combination.all? {|a| @board[a] == "X"} || win_combination.all? {|a| @board[a] == "O"}
+  #     return  win_combination
+  #  end
 
-   end
-   return false
+   #end
+   #return false
+   WIN_COMBINATIONS.detect do |combo|
+   @board[combo[0]] == @board[combo[1]] &&
+     @board[combo[1]] == @board[combo[2]] &&
+     position_taken?(@board, combo[0])
+ end
 
 end
  def full?
