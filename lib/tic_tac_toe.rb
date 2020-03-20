@@ -106,12 +106,12 @@ end
    end
  end
 
- def play(board)
+ def play
 
-    while  !over?(board)
+    while  !over?
        turn
     end
-    if won?(board)
+    if won?
        puts "Congratulations #{winner}!"
     elsif draw?
        puts "Cat's Game!"
