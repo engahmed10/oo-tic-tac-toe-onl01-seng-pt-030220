@@ -86,9 +86,9 @@ def won?
 end
  def full?
    if !@board.include?("")
-     true
+    return true
    else
-     false
+    return false
    end
  end
 def draw?
