@@ -85,7 +85,7 @@ def won?
 
 end
  def full?
-   board.all? {|z| z == "X" || z == "O"}
+   @board.all? {|z| z == "X" || z == "O"}
  end
 def draw?
    full? && !won?
