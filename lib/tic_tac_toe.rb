@@ -35,11 +35,13 @@ def move(user_input,token="X")
 end
 
 def position_taken?(user_input)
-  if @board[user_input] == "X" || @board[user_input] == "O"
-    return true
-  else
-    return false
-  end
+  #if @board[user_input] == "X" || @board[user_input] == "O"
+  #  return true
+  #else
+  #  return false
+  #end
+  !(@board[index].nil? || @board[index] == " ")
+
 end
 
 def valid_move?(position)
