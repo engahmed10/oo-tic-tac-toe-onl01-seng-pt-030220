@@ -85,11 +85,7 @@ def won?
 
 end
  def full?
-   if !@board.include?(nil)
-    return true
-   else
-    return false
-   end
+   board.all? {|z| z == "X" || z == "O"}
  end
 def draw?
    full? && !won?
