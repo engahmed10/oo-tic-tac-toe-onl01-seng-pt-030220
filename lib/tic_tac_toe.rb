@@ -104,9 +104,8 @@ end
 
  def play
 
-    while  !over?
-       turn
-    end
+   turn until over?
+
     if won?
        puts "Congratulations #{winner}!"
     elsif draw?
