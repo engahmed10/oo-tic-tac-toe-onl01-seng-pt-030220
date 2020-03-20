@@ -85,14 +85,14 @@ def won?
 
 end
  def full?
-   if @board.include?(" ")
+   if @board.include?("")
      false
    else
      true
    end
  end
 def draw?
- full? && !won?
+   full? && !won?
 end
 def over?
    won? || full?
