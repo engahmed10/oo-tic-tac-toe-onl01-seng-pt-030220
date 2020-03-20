@@ -85,7 +85,7 @@ def won?
 
 end
  def full?
-   if !@board.include?("")
+   if !@board.include?(nil)
     return true
    else
     return false
