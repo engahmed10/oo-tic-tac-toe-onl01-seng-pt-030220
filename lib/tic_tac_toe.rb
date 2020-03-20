@@ -40,7 +40,7 @@ def position_taken?(user_input)
   #else
   #  return false
   #end
-  !(@board[index].nil? || @board[index] == " ")
+  !(@board[user_input].nil? || @board[user_input] == " ")
 
 end
 
