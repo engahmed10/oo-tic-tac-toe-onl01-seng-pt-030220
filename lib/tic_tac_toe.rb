@@ -2,7 +2,7 @@ require 'pry'
 
 class TicTacToe
 
-  @@WIN_COMBINATIONS = [
+  WIN_COMBINATIONS = [
    [0,1,2], # Top row
    [3,4,5],
    [6,7,8],
@@ -58,7 +58,6 @@ def turn
      puts "That was invalid ,input again."
      turn
    end
-
 end
 
 def current_player
@@ -75,7 +74,7 @@ end
 
 
 def won?
-  @@WIN_COMBINATIONS.each  do  |win_combination|
+  WIN_COMBINATIONS.each  do  |win_combination|
 
     if win_combination.all? {|a| @board[a] == "X"} || win_combination.all? {|a| @board[a] == "O"}
        return  win_combination
@@ -99,11 +98,26 @@ def over?
    won? || full?
 end
 
- def winner(board)
+ def winner
    if  won?
-     return  board[won?]
+     return  @board[won?[0]]
    else
      return nil
    end
  end
+
+ def play
+
+    until over?
+       turn
+    end
+     if won?
+       puts "Congratulations #{winner}!"
+     elsif draw?
+       puts "Cat's Game!"
+     end
+     binding.pry
+ end
+
+
 end
